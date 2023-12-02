@@ -46,9 +46,6 @@ fn part_two() -> u32 {
 }
 
 fn main() {
-    use std::time::Instant;
-    let now = Instant::now();
     println!("Answer for part 1: {0}", part_one());
     println!("Answer for part 2: {0}", part_two());
-    println!("took {:.2?}", now.elapsed())
 }
