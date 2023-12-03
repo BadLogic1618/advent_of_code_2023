@@ -17,7 +17,7 @@ pub fn process_line(line: &str) -> Option<usize> {
             "red" => 12,
             "green" => 13,
             "blue" => 14,
-            _ => 0,
+            _ => unreachable!(),
         };
 
         if count > threshold {

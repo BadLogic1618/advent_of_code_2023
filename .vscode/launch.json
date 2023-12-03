@@ -7,7 +7,7 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'day_01'",
+            "name": "Debug executable 'day_03'",
             "cargo": {
                 "args": [
                     "build",
