@@ -18,27 +18,27 @@ fn main() {
     println!("Answer for part 2: {0}", part_two(INPUT));
 }
 
-pub fn part_one(input: &str) -> u8 {
+pub fn part_one(input: &str) -> u32 {
     input.lines()
         .map(line_to_calibration_val)
         .sum()
 }
 
-fn line_to_calibration_val(input: &str) -> u8 {
+fn line_to_calibration_val(input: &str) -> u32 {
     let input = input.as_bytes();
 
-    let first_digit = input.iter().find(|byte| byte.is_ascii_digit()).unwrap();
-    let second_digit = input.iter().rfind(|byte| byte.is_ascii_digit()).unwrap();
-    first_digit * 10 + second_digit
+    let first_digit = input.iter().find(|byte| byte.is_ascii_digit()).unwrap() - b'0';
+    let second_digit = input.iter().rfind(|byte| byte.is_ascii_digit()).unwrap() - b'0';
+    first_digit as u32 * 10 + second_digit as u32
 }
 
-pub fn part_two(input: &str) -> u8 {
+pub fn part_two(input: &str) -> u32 {
     input.lines()
         .map(line_to_calibration_val_words)
         .sum()
 }
 
-fn line_to_calibration_val_words(line: &str) -> u8 {
+fn line_to_calibration_val_words(line: &str) -> u32 {
     let input = line.as_bytes();
     let mut n = 0;
 
@@ -56,18 +56,18 @@ fn line_to_calibration_val_words(line: &str) -> u8 {
         }
     }
 
-    'outer: for i in input.len()-1..=0{
+    'outer: for i in (0..input.len()).rev(){
         if input[i].is_ascii_digit() {
             n += input[i] - b'0';
             break;
         }
         for val in REPLACEMENT_PAIRS {
-            if input[..i].ends_with(val.0){
+            if input[..=i].ends_with(val.0){
                 n += val.1;
                 break 'outer;
             }
         }
     }
 
-    n
+    n as u32
 }
