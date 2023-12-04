@@ -1,1 +1,1 @@
-pub const INPUT: &str = include_str!("input.txt");
+pub const INPUT: &str = include_str!("../../advent_of_code_2023_input/day_02/input.txt");

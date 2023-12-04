@@ -1,4 +1,4 @@
-pub const INPUT: &'static str = include_str!("input.txt");
+pub const INPUT: &'static str = include_str!("../../advent_of_code_2023_input/day_01/input.txt");
 
 // including first and last characters of orignal str in replacement because some values in input have overlapping start/end characters
 const REPLACEMENT_PAIRS: [(&[u8], u8); 9] = [

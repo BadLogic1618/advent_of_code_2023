@@ -1,16 +1,5 @@
-const INPUT: &str = include_str!("input.txt");
+const INPUT: &str = include_str!("../../advent_of_code_2023_input/day_03/input.txt");
 const BOUND: usize = 140;
-
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
 
 fn main() {
     println!("part one: {}", part_one(INPUT));

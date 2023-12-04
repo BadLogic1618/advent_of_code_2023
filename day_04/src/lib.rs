@@ -1,6 +1,6 @@
 use std::collections::HashSet;
 
-pub const INPUT: &str = include_str!("input.txt");
+pub const INPUT: &str = include_str!("../../advent_of_code_2023_input/day_04/input.txt");
 
 pub fn part_one(input: &str) -> usize {
     input.lines()
@@ -43,12 +43,7 @@ pub fn part_two(input: &str) -> usize {
 mod tests {
     use crate::*;
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
+    const TEST_INPUT: &str = include_str!("../../advent_of_code_2023_input/day_04/test.txt");
 
     #[test]
     fn test_part_one() {
