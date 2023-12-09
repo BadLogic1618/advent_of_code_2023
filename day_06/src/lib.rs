@@ -31,6 +31,14 @@ fn process_pair(pair: (isize, isize)) -> isize {
     val.round() as isize
 }
 
+pub fn part_two(input: &str) -> isize {
+    let mut lines = input.lines();
+    let time = lines.next().unwrap().split_once(':').unwrap().1.replace(" ", "").parse::<isize>().unwrap();
+    let distance = lines.next().unwrap().split_once(':').unwrap().1.replace(" ", "").parse::<isize>().unwrap();
+
+    process_pair((time, distance))
+}
+
 #[cfg(test)]
 mod tests {
     use crate::*;
@@ -42,8 +50,8 @@ mod tests {
         assert_eq!(part_one(TEST_INPUT), 288);
     }
     
-    // #[test]
-    // fn test_part_two() {
-    //     assert_eq!(part_two(TEST_INPUT), 46);
-    // }
+    #[test]
+    fn test_part_two() {
+        assert_eq!(part_two(TEST_INPUT), 71503);
+    }
 }
